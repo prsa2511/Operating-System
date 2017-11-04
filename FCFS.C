@@ -6,7 +6,7 @@ void main()
     clrscr();
     printf("Enter the no. of processes\n");
     scanf("%d",&n);
-    printf("Enter arrival time and burst time for each process");
+    printf("Enter arrival time and burst time for each process\n");
     for(i=1;i<=n;i++)
     {
       p[i][0]=i;
@@ -22,17 +22,11 @@ void main()
       p[i][3]=ct;
     }
     for(i=1;i<=n;i++)
-    {
       p[i][4]=p[i][3]-p[i][1];//TAT=CT-AT
-    }
     for(i=1;i<=n;i++)
-    {
       p[i][5]=p[i][4]-p[i][2];//WT=TAT-BT
-    }
     printf("The scheduled processes are:\nPid\tAT\tBT\tCT\tTAT\tWT\n");
     for(i=1;i<=n;i++)
-    {
       printf("%d\t%d\t%d\t%d\t%d\t%d\n",p[i][0],p[i][1],p[i][2],p[i][3],p[i][4],p[i][5]);
-    }
     getch();
 }
